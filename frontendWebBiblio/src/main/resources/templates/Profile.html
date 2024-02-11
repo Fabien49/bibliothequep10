@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+c<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Required meta tags -->
@@ -56,7 +56,7 @@
                         </thead>
                         <tbody>
                         <tr th:each=" borrow: ${currentUserActiveBorrows}">
-                            <td class="align-middle" th:text="${borrow.getBook().getTitle()}">Mark</td>
+                            <td class="align-middle" th:text="${borrow.getBook().getTitle()}">Title</td>
                             <td class="align-middle"
                                 th:text="${borrow.getBook().getAuthorFirstName()} + ' ' + ${borrow.getBook().getAuthorLastName()}"></td>
                             <td class="align-middle" th:text="${borrow.getBorrowDate()}"></td>

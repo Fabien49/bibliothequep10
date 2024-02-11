@@ -95,6 +95,23 @@ CREATE TABLE IF NOT EXISTS `registered_user` (
 
 -- --------------------------------------------------------
 
+--
+-- Structure de la table `reservation`
+--
+
+CREATE TABLE IF NOT EXISTS `reservation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `avalaibility_date` date DEFAULT NULL,
+  `notification_is_sent` bit(1) NOT NULL,
+  `position` int(11) NOT NULL,
+  `book_id` int(11) DEFAULT NULL,
+  `library_id` int(11) DEFAULT NULL,
+  `registered_user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+  );
+
+-- --------------------------------------------------------
+
 
 
 --
@@ -115,3 +132,10 @@ ALTER TABLE `borrow`
   ADD CONSTRAINT `FK4o1lami9uaoanv2yutyx4e5rx` FOREIGN KEY (`library_id`) REFERENCES `library` (`id`),
   ADD CONSTRAINT `FKgqh01ty3c1u7ja2rjdua05c36` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`),
   ADD CONSTRAINT `FKmgvxfg4n767u28y21y5miyvm0` FOREIGN KEY (`registered_user_id`) REFERENCES `registered_user` (`id`);
+
+  --
+  -- Contraintes pour la table `reservation`
+  --
+  ALTER TABLE `reservation`
+  ADD CONSTRAINT `FKp377u47igi9fw9amplrxsepe` FOREIGN KEY (`book_id`, `library_id`) REFERENCES `book, library` (`id, id`),
+  ADD CONSTRAINT `FK5d74ihv3dtabadl6hnk60q6ip` FOREIGN KEY (`registered_user_id`) REFERENCES `registered_user` (`id`);

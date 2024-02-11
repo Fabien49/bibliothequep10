@@ -76,6 +76,8 @@
             <version>2.4.4</version>
         </dependency>
     </dependencies>
+    <packaging>war</packaging>
+
     <build>
         <plugins>
             <plugin>

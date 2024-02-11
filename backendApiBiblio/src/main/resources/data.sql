@@ -185,5 +185,5 @@ VALUES
  insert into reservation
 (avalaibility_date, notification_is_sent, book_id, library_id, registered_user_id, position)
 VALUES
-('2022-09-26', true, 1, 1, 3, 1),
+('2022-09-26', false, 1, 1, 3, 1),
 ('2022-09-26', false, 1, 1, 2, 2);

@@ -18,7 +18,7 @@ public interface ApiProxy {
 
         // Book methods
 
-        @GetMapping(value = "/books")
+        @GetMapping(value = "/aircrafts")
         List<BookBean> getBooks(@RequestParam(required = false) String query);
 
         @GetMapping(value = "/books/{id}")
